@@ -419,10 +419,10 @@ def check(list):
         for r in range(n - 1):
             if list[c][r] == list[c][r + 1]:
                 r_count += 1
-            else:                  #
-                r_count = 1
-            count_set.add(r_count) #
-
+            else:                  # 1. 조건에 안맞을 때,
+                r_count = 1        # r_count 를 1로 초기화하지 않으면, 다음 순회중에 조건에 맞는 경우가 나왔을 때 문제가 됨
+            count_set.add(r_count) # 2. if문 안에서 추가하지 않으면, 
+                                   # (크기 상관없이) 마지막 순회에서 얻은 r_count 값만 추가되서 문제가 됨
     for r in range(n):
         c_count = 1
         for c in range(n - 1):
