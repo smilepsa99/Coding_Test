@@ -296,8 +296,6 @@ def check(list):
         for r in range(n - 1):
             if list[c][r] == list[c][r + 1]:
                 r_count += 1
-            else:
-                break
             count_set.add(r_count)
 
     for r in range(n):
@@ -305,8 +303,6 @@ def check(list):
         for c in range(n - 1):
             if list[c][r] == list[c + 1][r]:
                 c_count += 1
-            else:
-                break
             count_set.add(c_count)
 
     return max(count_set)
@@ -348,6 +344,7 @@ candy = [list(input()) for i in range(n)]
 
 def check(list):
     count = 1
+
 
     # 행(row), 가로 체크
     for c in range(n):
