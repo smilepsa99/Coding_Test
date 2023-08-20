@@ -222,3 +222,39 @@ class Solution14_1 {
 //        return answer;
 //    }
 //}
+
+// 15. 주사위 게임 2
+class Solution15 {
+    public int solution(int a, int b, int c) {
+        int answer = 0;
+        if (a != b && b != c && c != a) {
+            answer = a + b + c;
+        } else if (a == b || b == c || c == a) {
+            if (a == b && b == c && c == a) {
+                answer = (a + b + c) * (a*a + b*b + c*c)
+                        * (a*a*a + b*b*b + c*c*c);
+            } else {
+                answer = (a + b + c) * (a*a + b*b + c*c);
+            }
+        }
+        return answer;
+    }
+}
+
+// 16. 마지막 두 원소
+class Solution16 {
+    public int[] solution(int[] num_list) {
+        int[] answer = new int[num_list.length + 1];
+        for (int i = 0; i < num_list.length; i++) {
+            answer[i] = num_list[i];
+        }
+        int last = answer[num_list.length - 1];
+        int last_1 = answer[num_list.length - 2];
+        if (last > last_1) {
+            answer[answer.length - 1] = last - last_1;
+        } else {
+            answer[answer.length - 1] = last * 2;
+        }
+        return answer;
+    }
+}
