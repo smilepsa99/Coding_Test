@@ -258,3 +258,33 @@ class Solution16 {
         return answer;
     }
 }
+
+// 17. 수 조작하기 2
+class Solution17  {
+    public String solution(int[] numLog) {
+        String answer = "";
+        for (int i = 1; i < numLog.length; i++) {
+            switch (numLog[i] - numLog[i-1]) {
+                case 1 : answer += "w"; break;
+                case -1 : answer += "s"; break;
+                case 10 : answer += "d"; break;
+                case -10 : answer += "a";
+            }
+        }
+        return answer;
+    }
+}
+
+// 18. 수열과 구간 쿼리 4
+class Solution18 {
+    public int[] solution(int[] arr, int[][] queries) {
+        for (int i = 0; i < queries.length; i++) {
+            for (int j = queries[i][0]; j <= queries[i][1]; j++) {
+                if (j % queries[i][2] == 0) {
+                    arr[j] += 1;
+                }
+            }
+        }
+        return arr;
+    }
+}
