@@ -288,3 +288,43 @@ class Solution18 {
         return arr;
     }
 }
+
+// 19. 카운트 업
+class Solution19 {
+    public int[] solution(int start_num, int end_num) {
+        int[] answer = new int[end_num - start_num + 1];
+        int index = 0;
+        for (int i = start_num; i <= end_num; i++) {
+            answer[index] = i;
+            index++;
+        }
+        return answer;
+    }
+}
+
+// 20. 글자 이어 붙여 문자열 만들기
+class Solution20_1 {
+    public String solution(String my_string, int[] index_list) {
+        char[] parts = new char[my_string.length()];
+        for (int i = 0; i < my_string.length(); i++) {
+            parts[i] = my_string.charAt(i);
+            // [참고] charAt() 이란? https://colossus-java-practice.tistory.com/31
+        }
+        String answer = "";
+        for (int index : index_list) {
+            answer += parts[index];
+        }
+        return answer;
+    }
+}
+
+class Solution20_2 {
+    public String solution(String my_string, int[] index_list) {
+        String answer = "";
+        String[] parts = my_string.split("");
+        for (int i : index_list) {
+            answer += parts[i];
+        }
+        return answer;
+    }
+}
