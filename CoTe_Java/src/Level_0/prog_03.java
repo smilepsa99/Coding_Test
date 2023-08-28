@@ -153,3 +153,64 @@ class Solution30 {
         return answer;
     }
 }
+
+// 31. 그림 확대
+class Solution31 {
+    public String[] solution(String[] picture, int k) {
+        String[] answer = new String[picture.length * k];
+        // String xs = "x".repeat(k), dots = ".".repeat(k);
+        for (int i = 0; i < picture.length; i++) {
+            // picture[i] = picture[i].replace("x", xs);
+            // picture[i] = picture[i].replace(".", dots);
+        }
+        for (int j = 0; j < answer.length; j++) {
+            answer[j] = picture[j / k];
+        }
+        return answer;
+    }
+}
+
+// 32. 커피 심부름
+class Solution32 {
+    public int solution(String[] order) {
+        int sum = 0;
+        for (String s : order) {
+            if (s.contains("americano") || s.equals("anything")) {sum += 4500;}
+            else if (s.contains("cafelatte")) {sum += 5000;}
+        }
+        return sum;
+    }
+}
+
+// 33. 세균 증식
+class Solution33 {
+    public int solution(int n, int t) {
+        int time = (int) Math.pow(2, t);
+        int answer = n * time;
+        return answer;
+    }
+}
+
+// 34. OX 퀴즈
+class Solution34 {
+    public String[] solution(String[] quiz) {
+        String[] answer = new String[quiz.length];
+        for (int i = 0; i < quiz.length; i++) {
+            String[] parts = quiz[i].split(" ");
+            int n1 = Integer.parseInt(parts[0]);
+            int n2 = Integer.parseInt(parts[2]);
+            int ans = Integer.parseInt(parts[4]);
+
+            if (parts[1].equals("+")) {
+                if (n1 + n2 == ans) {
+                    answer[i] = "O";
+                } else {answer[i] = "X";}
+            } else if (parts[1].equals("-")) {
+                if (n1 - n2 == ans) {
+                    answer[i] = "O";
+                } else {answer[i] = "X";}
+            }
+        }
+        return answer;
+    }
+}
