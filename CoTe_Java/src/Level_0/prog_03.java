@@ -214,3 +214,34 @@ class Solution34 {
         return answer;
     }
 }
+
+// 35. 편지
+class Solution35 {
+    public int solution(String message) {
+        int answer = message.length() * 2;
+        return answer;
+    }
+}
+
+// 36. 인덱스 바꾸기
+class Solution36_1 {
+    public String solution(String my_string, int num1, int num2) {
+        String answer = "";
+        String[] parts = my_string.split("");
+        String temp = parts[num1];
+        parts[num1] = parts[num2];
+        parts[num2] = temp;
+        for (String s : parts) {answer += s;}
+        return answer;
+    }
+}
+
+//class Solution36_2 {
+//    public String solution(String my_string, int num1, int num2) {
+//        char[] parts = my_string.toCharArray();
+//        // [참고] <toCharArray() 사용법> https://velog.io/@uhan2/java-String.toCharArray-%EC%82%AC%EC%9A%A9%EB%B2%95
+//        parts[num1] = my_string.charAt(num2);
+//        parts[num2] = my_string.charAt(num1);
+//        return new String(parts);
+//    }
+//}
